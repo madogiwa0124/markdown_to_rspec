@@ -1,5 +1,7 @@
 # MarkdownToRspec
 
+![ci](https://github.com/Madogiwa0124/markdown_to_rspec/workflows/ci/badge.svg)
+
 converts text in markdown format into text in RSpec format.
 
 This gem uses `RDoc::Markdown` to parse the text in markdown format, generates `RDoc::Markup::Document`, and then generates an text in RSpec format from it.
