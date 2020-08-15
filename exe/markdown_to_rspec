@@ -1,0 +1,21 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+require 'markdown_to_rspec'
+require 'rake'
+require 'pathname'
+
+namespace :markdown_to_rspec do
+  desc 'converts text in markdown format into executable RSpec text.'
+  task :to_rspec do
+    markdown_file_path = Pathname.new(ARGV[0])
+    if markdown_file_path.extname == '.md'
+      markdown_text = File.read(markdown_file_path)
+      puts MarkdownToRspec.to_rspec(markdown_text)
+    else
+      raise(MarkdownToRspec::InValidFileFormatError, 'Specify the file as a `.md` format.')
+    end
+  end
+end
+
+Rake::Task['markdown_to_rspec:to_rspec'].execute
