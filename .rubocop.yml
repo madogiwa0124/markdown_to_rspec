@@ -1,0 +1,67 @@
+AllCops:
+  TargetRubyVersion: 2.7.0
+  EnabledByDefault: true
+  Exclude:
+    - 'vendor/**/*'
+    - 'markdown_to_rspec.gemspec'
+
+Bundler/GemComment:
+  Enabled: false
+
+Metrics/ClassLength:
+  Max: 120
+
+Metrics/BlockLength:
+  Exclude:
+    - 'spec/**/*'
+
+Style/Documentation:
+  Enabled: false
+
+Style/DocumentationMethod:
+  Enabled: false
+
+Style/ParallelAssignment:
+  Enabled: false
+
+Style/MethodCallWithArgsParentheses:
+  Enabled: false
+
+Style/Copyright:
+  Enabled: false
+
+Style/HashEachMethods:
+  Enabled: true
+
+Style/StringHashKeys:
+  Enabled: false
+
+Style/InlineComment:
+  Enabled: false
+
+Style/HashTransformKeys:
+  Enabled: true
+
+Style/HashTransformValues:
+  Enabled: true
+
+Style/ConstantVisibility:
+  Enabled: false
+
+Style/GuardClause:
+  Enabled: false
+
+Layout/LineLength:
+  Max: 120
+
+Layout/EmptyLineAfterGuardClause:
+  Enabled: false
+
+Layout/MultilineAssignmentLayout:
+  EnforcedStyle: same_line
+
+Lint/ConstantResolution:
+  Enabled: false
+
+Lint/MissingSuper:
+  Enabled: false
