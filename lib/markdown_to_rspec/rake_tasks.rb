@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 require 'rake'
+require 'pathname'
+require 'markdown_to_rspec'
 
 namespace :markdown_to_rspec do
   desc 'converts file in markdown format into executable RSpec text.'

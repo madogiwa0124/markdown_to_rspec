@@ -2,8 +2,6 @@
 # frozen_string_literal: true
 
 require 'optparse'
-require 'pathname'
-require 'markdown_to_rspec'
 require 'markdown_to_rspec/rake_tasks'
 
 option = OptionParser.new
