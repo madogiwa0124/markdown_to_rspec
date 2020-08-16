@@ -22,7 +22,8 @@ module MarkdownToRspec
             item = format(part, find_parent(part))
             @items << item
           end
-          items.compact.select { |item| item.parent.nil? }.map(&:convert).join("\n")
+          # Each item renders a child element, so only top-level items are converted.
+          items.select { |item| item.parent.nil? }.map(&:convert).join("\n")
         end
 
         private
