@@ -31,6 +31,13 @@ RSpec.describe MarkdownToRspec do
             end
           end
         end
+        RSpec.describe 'Index.' do
+          # A screen to check something
+          describe 'Initial Display.' do
+            it 'The items must be displayed.' do
+            end
+          end
+        end
       RSPEC
     end
 
