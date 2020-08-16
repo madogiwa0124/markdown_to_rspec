@@ -6,27 +6,7 @@ RSpec.describe MarkdownToRspec do
   end
 
   describe '.to_rspec' do
-    let(:markdown) do
-      <<~MARKDOWN.chomp
-        # Details.
-        A screen to check something
-        ref: https://example/com/ticket/1
-
-        ## Initial Display.
-
-        ### When a record exists.
-        * The title must be displayed.
-        * The text must be displayed.
-
-        ### When the record does not exist.
-        * The title should not be displayed.
-        * The text should not be displayed.
-
-        ### Other cases.
-        * 500 pages to be displayed.
-      MARKDOWN
-    end
-
+    let(:markdown) { File.read('spec/samples/sample.md') }
     let(:rspec) do
       <<~RSPEC.chomp
         RSpec.describe 'Details.' do

@@ -26,7 +26,9 @@ Or install it yourself as:
 
 ``` ruby
 # CLI
-$ markdown_to_rspec `file_path`
+$ markdown_to_rspec -f `MARKDOWN_FILE_PATH`
+#=> return A string in RSpec format
+$ markdown_to_rspec -t `MARKDOWN__TEXT`
 #=> return A string in RSpec format
 
 # in ruby code

@@ -1,14 +1,15 @@
 #!/usr/bin/env ruby
 # frozen_string_literal: true
 
+require 'optparse'
 require 'markdown_to_rspec'
 require 'rake'
 require 'pathname'
 
 namespace :markdown_to_rspec do
-  desc 'converts text in markdown format into executable RSpec text.'
-  task :to_rspec do
-    markdown_file_path = Pathname.new(ARGV[0])
+  desc 'converts file in markdown format into executable RSpec text.'
+  task :to_rspec_from_file, [:file_path] do |_task, args|
+    markdown_file_path = Pathname.new(args[:file_path].to_s)
     if markdown_file_path.extname == '.md'
       markdown_text = File.read(markdown_file_path)
       puts MarkdownToRspec.to_rspec(markdown_text)
@@ -16,6 +17,28 @@ namespace :markdown_to_rspec do
       raise(MarkdownToRspec::InValidFileFormatError, 'Specify the file as a `.md` format.')
     end
   end
+
+  desc 'converts text in markdown format into executable RSpec text.'
+  task :to_rspec_from_text, [:text] do |_task, args|
+    # unescaped new line string.
+    markdown_text = args[:text].to_s.gsub('\\n', "\n")
+    puts MarkdownToRspec.to_rspec(markdown_text)
+  end
+
+  desc 'Show gem version.'
+  task :version do
+    puts "markdown_to_rspec: #{MarkdownToRspec::VERSION}"
+  end
 end
 
-Rake::Task['markdown_to_rspec:to_rspec'].execute
+option = OptionParser.new
+option.on('-f', '--file FILE_PATH', 'Set the target Markdown file path.') do |v|
+  Rake::Task['markdown_to_rspec:to_rspec_from_file'].execute(file_path: v)
+end
+option.on('-t', '--text TEXT', 'Set the target Markdown text.') do |v|
+  Rake::Task['markdown_to_rspec:to_rspec_from_text'].execute(text: v)
+end
+option.on('-v', '--version', 'Show gem version.') do
+  Rake::Task['markdown_to_rspec:version'].execute
+end
+option.parse!(ARGV)
