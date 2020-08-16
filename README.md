@@ -1,6 +1,7 @@
 # MarkdownToRspec
 
 ![ci](https://github.com/Madogiwa0124/markdown_to_rspec/workflows/ci/badge.svg)
+![Gem Version](https://badge.fury.io/rb/markdown_to_rspec.svg)
 
 converts text in markdown format into text in RSpec format.
 
