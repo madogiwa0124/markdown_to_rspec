@@ -6,8 +6,8 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Madogiwa"]
   spec.email         = ["madogiwa0124@gmail.com"]
 
-  spec.summary       = "This gem converts text in markdown format into executable RSpec text."
-  spec.description   = "This gem converts text in markdown format into executable RSpec text."
+  spec.summary       = "This gem converts text in markdown format into text in RSpec format."
+  spec.description   = "This gem converts text in markdown format into text in RSpec format."
   spec.homepage      = "https://github.com/Madogiwa0124/markdown_to_rspec"
   spec.license       = "MIT"
   spec.metadata["homepage_uri"] = spec.homepage
