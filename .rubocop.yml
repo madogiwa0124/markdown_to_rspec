@@ -14,6 +14,7 @@ Metrics/ClassLength:
 Metrics/BlockLength:
   Exclude:
     - 'spec/**/*'
+    - 'markdown_to_rspec/rake_tasks.rb'
 
 Style/Documentation:
   Enabled: false
