@@ -32,8 +32,9 @@ $ markdown_to_rspec -t `MARKDOWN__TEXT`
 #=> return A string in RSpec format
 
 # in ruby code
+require 'rspec_to_markdown'
 markdown = "A string in markdown format"
-MarkdownToRspec.to_rspec(`markdown text`)
+MarkdownToRspec.to_rspec(markdown)
 #=> return A string in RSpec format
 ```
 
@@ -44,7 +45,7 @@ The following text is in markdown format
 ``` markdown
 # Details.
 A screen to check something
-ref: https://example/com/ticket/1
+ref: https://example/com/tickets/1
 
 ## Initial Display.
 
@@ -58,6 +59,12 @@ ref: https://example/com/ticket/1
 
 ### Other cases.
 * 500 pages to be displayed.
+
+# Index.
+A screen to check something
+
+## Initial Display.
+* The items must be displayed.
 ```
 
 You can convert it to an text in RSpec format.
@@ -82,6 +89,13 @@ RSpec.describe 'Details.' do
     context 'Other cases.' do
       it '500 pages to be displayed.' do
       end
+    end
+  end
+end
+RSpec.describe 'Index.' do
+  # A screen to check something
+  describe 'Initial Display.' do
+    it 'The items must be displayed.' do
     end
   end
 end
