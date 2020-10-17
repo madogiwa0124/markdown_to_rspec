@@ -36,7 +36,7 @@ module MarkdownToRspec
         end
 
         def headings
-          items.select { |item| item.class == Item::Heading }
+          items.select { |item| item.instance_of? Item::Heading }
         end
 
         def format(part, parent)

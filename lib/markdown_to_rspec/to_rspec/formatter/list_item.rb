@@ -18,7 +18,7 @@ module MarkdownToRspec
         attr_reader :rdoc_list_item
 
         def find_paragraph
-          check_paragraph = ->(obj) { obj.class.name == 'RDoc::Markup::Paragraph' }
+          check_paragraph = ->(obj) { obj.instance_of? RDoc::Markup::Paragraph }
           rdoc_list_item.parts.find(&check_paragraph)
         end
       end
