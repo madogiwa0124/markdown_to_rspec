@@ -49,7 +49,7 @@ PLATFORMS
 DEPENDENCIES
   markdown_to_rspec!
   rspec (~> 3.10)
-  rubocop
+  rubocop (~> 1.16)
 
 BUNDLED WITH
-   2.1.4
+   2.2.3

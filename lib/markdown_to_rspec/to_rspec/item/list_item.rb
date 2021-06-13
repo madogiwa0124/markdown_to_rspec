@@ -15,7 +15,8 @@ module MarkdownToRspec
         attr_reader :text, :depth, :parent, :children
 
         def convert
-          template(text).split("\n").map { |line| indent(line) }.join("\n")
+          template(text).split("\n").map { |line| indent(line) }
+                        .join("\n")
         end
 
         private

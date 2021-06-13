@@ -13,10 +13,7 @@ module MarkdownToRspec
         private
 
         def build_rspec_rspec_paragraph(rdoc_paragraph, parent)
-          ToRspec::Item::Paragraph.new(
-            text: rdoc_paragraph.text,
-            parent: parent
-          )
+          ToRspec::Item::Paragraph.new(text: rdoc_paragraph.text, parent: parent)
         end
       end
     end
