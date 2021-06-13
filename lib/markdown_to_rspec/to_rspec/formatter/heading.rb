@@ -13,11 +13,7 @@ module MarkdownToRspec
         private
 
         def build_rspec_rspec_heading(rdoc_header, parent)
-          ToRspec::Item::Heading.new(
-            text: rdoc_header.text,
-            level: rdoc_header.level,
-            parent: parent
-          )
+          ToRspec::Item::Heading.new(text: rdoc_header.text, level: rdoc_header.level, parent: parent)
         end
       end
     end

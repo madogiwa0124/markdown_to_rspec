@@ -14,9 +14,7 @@ module MarkdownToRspec
         private
 
         def format(item, parent)
-          {
-            'RDoc::Markup::ListItem' => Formatter::ListItem.new
-          }[item.class.name]&.call(item, parent)
+          { 'RDoc::Markup::ListItem' => Formatter::ListItem.new }[item.class.name]&.call(item, parent)
         end
       end
     end

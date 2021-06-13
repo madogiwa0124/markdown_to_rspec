@@ -15,7 +15,8 @@ module MarkdownToRspec
 
         def convert
           lines = text.split("\n").map { |line| template(line) }
-          lines.map { |line| indent(line) }.join("\n")
+          lines.map { |line| indent(line) }
+               .join("\n")
         end
 
         private

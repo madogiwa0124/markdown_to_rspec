@@ -23,7 +23,8 @@ module MarkdownToRspec
             @items << item
           end
           # Each item renders a child element, so only top-level items are converted.
-          items.select { |item| item.parent.nil? }.map(&:convert).join("\n")
+          items.select { |item| item.parent.nil? }
+               .map(&:convert).join("\n")
         end
 
         private
