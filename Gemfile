@@ -8,5 +8,5 @@ gemspec
 gem 'rspec', '~> 3.10'
 
 group :development, :test do
-  gem 'rubocop', '~> 1.19', require: false
+  gem 'rubocop', '~> 1.20', require: false
 end
