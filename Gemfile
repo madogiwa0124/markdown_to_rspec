@@ -5,8 +5,7 @@ source 'https://rubygems.org'
 # Specify your gem's dependencies in markdown_to_rspec.gemspec
 gemspec
 
-gem 'rspec', '~> 3.11'
-
 group :development, :test do
+  gem 'rspec', '~> 3.11'
   gem 'rubocop', '~> 1.28', require: false
 end
