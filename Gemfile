@@ -6,6 +6,6 @@ source 'https://rubygems.org'
 gemspec
 
 group :development, :test do
-  gem 'rspec', '~> 3.11'
+  gem 'rspec', '~> 3.12'
   gem 'rubocop', '~> 1.28', require: false
 end
